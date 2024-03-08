@@ -1,6 +1,6 @@
 {
   "name": "@flashjs/ng-safe-eval",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "This package is designed to provide a secure and controlled environment for executing JavaScript code dynamically within a specified context. Built as a wrapper around the built-in eval function, ngSafeEval ensures that only strings with a defined context are executed, enhancing the security and predictability of your application.",
   "author": {
     "name": "Sai Mouli Bandari",
