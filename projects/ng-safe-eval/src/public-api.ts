@@ -3,4 +3,3 @@
  */
 
 export * from './lib/ng-safe-eval.service';
-export * from './lib/ng-safe-eval.component';
