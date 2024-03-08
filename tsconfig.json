@@ -10,6 +10,11 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
+    "paths": {
+      "ng-safe-eval": [
+        "./dist/ng-safe-eval"
+      ]
+    },
     "esModuleInterop": true,
     "sourceMap": true,
     "declaration": false,
