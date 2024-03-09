@@ -22,7 +22,7 @@ const codeString = 'variable1 + " " + variable2';
 
 //   Execute the code string within the specified context 
 const result = NgSafeEvalService.execute(codeString, context);
-    console.log(result); // Outputs: Hello World Installation:
+    console.log(result); // Outputs: Hello World
 ```
 
 ## Installation Process
