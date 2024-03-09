@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NgSafeEvalService } from './ng-safe-eval.service';
+import { NgsafeEvalService } from './ng-safe-eval.service';
 
-describe('NgSafeEvalService', () => {
-  let service: NgSafeEvalService;
+describe('NgsafeEvalService', () => {
+  let service: NgsafeEvalService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(NgSafeEvalService);
+    service = TestBed.inject(NgsafeEvalService);
   });
 
   it('should be created', () => {
