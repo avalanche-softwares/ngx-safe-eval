@@ -1,13 +1,13 @@
-type GloablKeys = keyof Window;
+type GlobalKeys = keyof Window;
 
 
-export type GlobalScopeToBeAvaliavble = {
-    [key in GloablKeys]: true;
+export type GlobalScopeToBeAvailable = {
+    [key in GlobalKeys]: true;
 }
 
-type ArrowFunxctionType = (...args: any[]) => any;
+type ArrowFunctionType = (...args: any[]) => any;
 
 export interface EvaluationContext {
-    [key: string]: Function | ArrowFunxctionType | any
+    [key: string]: Function | ArrowFunctionType | any
 }
 
