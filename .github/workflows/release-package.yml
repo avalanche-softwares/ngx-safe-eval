@@ -22,9 +22,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
+      - uses: jgierer12/npm-auth-gpr@v1
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
+          token: ${{ secrets.TOKEN_NPM }}
       - name: Install Angular
         run: npm install -g @angular/cli@latest
       - name: Check Angular.
@@ -57,9 +59,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
+      - uses: jgierer12/npm-auth-gpr@v1
         with: 
           node-version: 20
           registry-url: https://registry.npmjs.org/
+          token: ${{ secrets.TOKEN_NPM }}
       - name: Install Angular
         run: npm install -g @angular/cli@latest
       - name: Check Angular.
