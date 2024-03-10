@@ -27,7 +27,7 @@ jobs:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
       - run: ng run build --configuration=production 
-      - run: cd dist/ng-safe-eval
+      - run: cd ./dist/ng-safe-eval
       - run: npm publish
         env:
           GIT_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -45,7 +45,7 @@ jobs:
           node-version: 20
           registry-url: https://registry.npmjs.org/
       - run: ng run build --configuration=production 
-      - run: cd dist/ng-safe-eval
+      - run: cd ./dist/ng-safe-eval
       - run: npm publish
         env: 
           NODE_AUTH_TOKEN: ${{secrets.TOKEN_NPM}}
