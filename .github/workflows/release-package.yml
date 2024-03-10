@@ -32,7 +32,7 @@ jobs:
       - name: Check Angular.
         run: ng version
       - name: Install Dependency. 
-        run: npm i
+        run: npm ci
       - name: Run Build
         run: ng build --configuration=production
       - name: List Directory
@@ -45,8 +45,11 @@ jobs:
       #   run: ls -a
       # - name: Change To Libary
       #   run: cd ng-safe-eval
+      - name: Set up npm registry
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
       - name: Change Directory and Run
-        working-directory: ./dist/ng-safe-eval
+        working-directory: ./dist/ng-safe-eval  
+
         run: npm publish --access=public
         env:
           GIT_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -69,7 +72,7 @@ jobs:
       - name: Check Angular.
         run: ng version
       - name: Install Dependency. 
-        run: npm i
+        run: npm ci
       - name: Run Build
         run: ng build --configuration=production 
       - name: List Directory
@@ -80,6 +83,8 @@ jobs:
       #   run: ls -a
       # - name: Change To Libary
       #   run: cd ng-safe-eval
+      - name: Set up npm registry
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrcvb
       - name: Change Directory and Run
         working-directory: ./dist/ng-safe-eval
         run: npm publish --access=public
