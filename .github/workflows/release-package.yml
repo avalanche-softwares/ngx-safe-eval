@@ -85,6 +85,8 @@ jobs:
       #   run: cd ng-safe-eval
       - name: Set up npm registry
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrcvb
+      - name: View
+        run: ls
       - name: Change Directory and Run
         working-directory: ./dist/ng-safe-eval
         run: npm publish --access=public
