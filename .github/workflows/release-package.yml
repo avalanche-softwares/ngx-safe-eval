@@ -32,8 +32,11 @@ jobs:
       - name: Install Dependency. 
         run: npm i
       - name: Run Build
-        run: ng build --configuration=production 
-      - run: cd dist/ng-safe-eval
+        run: ng build --configuration=production
+      - name: List Directory
+        run: ls -a
+      - name: Change Working directory
+        run: cd dist/ng-safe-eval
       - run: pwd
       - run: npm publish --access=public
         env:
@@ -58,7 +61,10 @@ jobs:
         run: npm i
       - name: Run Build
         run: ng build --configuration=production 
-      - run: cd dist/ng-safe-eval
+      - name: List Directory
+        run: ls -a
+      - name: Change Working directory
+        run: cd dist/ng-safe-eval
       - run: echo pwd
       - run: npm publish --access=public
         env: 
