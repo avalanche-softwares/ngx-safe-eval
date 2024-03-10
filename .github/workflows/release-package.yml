@@ -16,7 +16,6 @@ jobs:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
       - run: npm ci
-      - run: npm publish
       - name: Install Angular
         run: npm install -g @angular/cli@latest
       - name: Check Angular.
