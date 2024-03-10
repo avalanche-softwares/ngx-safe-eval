@@ -15,12 +15,8 @@ jobs:
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
-      - name: Set up npm registry
-        run: |
-           echo "registry=https://npm.pkg.github.com/" > .npmrc
-           echo "//registry.npmjs.org/:_authToken=${{ secrets.TOKEN_NPM }}" >> .npmrc
-      - name: User
-        run: npm whoami
+      - run: npm ci
+      - run: npm publish
       - name: Install Angular
         run: npm install -g @angular/cli@latest
       - name: Check Angular.
@@ -46,7 +42,7 @@ jobs:
         working-directory: ./dist/ng-safe-eval
         run: npm publish --access=public
         env:
-          GIT_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   publish-npm:
     runs-on: ubuntu-latest
