@@ -1,7 +1,7 @@
 name: Angular Packages
 on:
   release:
-    types: [published]
+    types: [created]
 
 jobs:
   build:
@@ -10,9 +10,9 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
+      - run: npm install -g @angular/cli
       - run: npm ci
-      - run: npm test
 
   publish-gpr:
     needs: build
@@ -26,10 +26,11 @@ jobs:
         with:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
-      - run: npm ci
+      - run: ng run build --configuration=production 
+      - run: cd dist/ng-safe-eval
       - run: npm publish
         env:
-          GIT_AUTH_TOKEN: ${{secrets.TOKEN_GITHUB}}
+          GIT_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
   publish-npm:
     needs: build
@@ -43,7 +44,8 @@ jobs:
         with: 
           node-version: 20
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
+      - run: ng run build --configuration=production 
+      - run: cd dist/ng-safe-eval
       - run: npm publish
         env: 
-          GIT_AUTH_TOKEN: ${{secrets.TOKEN_NPM}}
+          NODE_AUTH_TOKEN: ${{secrets.TOKEN_NPM}}
