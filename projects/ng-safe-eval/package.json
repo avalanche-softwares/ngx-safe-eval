@@ -1,5 +1,5 @@
 {
-  "name": "ng-safe-eval",
+  "name": "@avalanche-softwares/ng-safe-eval",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^17.2.0",
@@ -8,5 +8,19 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avalanche-softwares/ngx-safe-eval.git"
+  },
+  "keywords": [
+    "dynamic function execution",
+    "scoped evaluation",
+    "safe eval",
+    "eval"
+  ],
+  "bugs": {
+    "url": "https://github.com/avalanche-softwares/ngx-safe-eval/issues"
+  },
+  "homepage": "https://github.com/avalanche-softwares/ngx-safe-eval/#readme"
 }
