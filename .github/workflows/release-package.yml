@@ -21,23 +21,16 @@ jobs:
            echo "//registry.npmjs.org/:_authToken=${{ secrets.TOKEN_NPM }}" >> .npmrc
       - name: User
         run: npm whoami
+      - name: Install Dependency. 
+        run: npm ci
       - name: Install Angular
         run: npm install -g @angular/cli@latest
       - name: Check Angular.
         run: ng version
-      - name: Install Dependency. 
-        run: npm ci
       - name: Run Build
         run: ng build --configuration=production 
       - name: List Directory
         run: ls -a
-      # - name: Change Working directory
-      #   run: cd dist
-      # - name: List Directory
-      #   run: ls -a
-      # - name: Change To Libary
-      #   run: cd ng-safe-eval
-     
       - name: View
         run: ls
       - name: Change Directory and Run
