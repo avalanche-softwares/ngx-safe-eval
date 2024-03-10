@@ -46,10 +46,11 @@ jobs:
       # - name: Change To Libary
       #   run: cd ng-safe-eval
       - name: Set up npm registry
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.TOKEN_NPM }}" > ~/.npmrcvb
+      - name: View
+        run: ls
       - name: Change Directory and Run
-        working-directory: ./dist/ng-safe-eval  
-
+        working-directory: ./dist/ng-safe-eval
         run: npm publish --access=public
         env:
           GIT_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
@@ -84,7 +85,7 @@ jobs:
       # - name: Change To Libary
       #   run: cd ng-safe-eval
       - name: Set up npm registry
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrcvb
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.TOKEN_NPM }}" > ~/.npmrcvb
       - name: View
         run: ls
       - name: Change Directory and Run
