@@ -4,35 +4,6 @@ on:
     types: [created, edited]
 
 jobs:
-  publish-gpr:
-    runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          registry-url: https://npm.pkg.github.com/
-      - name: Set up npm registry
-        run: echo "@saimouli1503:registry=https://npm.pkg.github.com" > .npmrc
-      - name: Install Dependency. 
-        run: npm ci
-      - name: Install Angular
-        run: npm install -g @angular/cli@latest
-      - name: Check Angular.
-        run: ng version
-      - name: Run Build
-        run: ng build --configuration=production
-      - name: List Directory
-        run: ls -a
-      - name: Change Directory and Run
-        working-directory: ./dist/ng-safe-eval
-        run: npm publish --access=public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
   publish-npm:
     runs-on: ubuntu-latest
     permissions:
