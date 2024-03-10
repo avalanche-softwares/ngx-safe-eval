@@ -34,7 +34,7 @@ jobs:
       - name: Run Build
         run: ng build --configuration=production 
       - run: cd ./dist/ng-safe-eval
-      - run: npm publish
+      - run: npm publish --access=public
         env:
           GIT_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -58,6 +58,6 @@ jobs:
       - name: Run Build
         run: ng build --configuration=production 
       - run: cd ./dist/ng-safe-eval
-      - run: npm publish
+      - run: npm publish --access=public
         env: 
           NODE_AUTH_TOKEN: ${{secrets.TOKEN_NPM}}
