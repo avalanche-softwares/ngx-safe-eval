@@ -35,14 +35,16 @@ jobs:
         run: ng build --configuration=production
       - name: List Directory
         run: ls -a
-      - name: Change Working directory
-        run: cd dist
-      - name: List Directory
-        run: ls -a
-      - name: Change To Libary
-        run: cd ng-safe-eval
+      # - name: Change Working directory
+      #   run:
+      #     working-directory: ./dist/ng-safe-eval
+      #   run: cd dist
+      # - name: List Directory
+      #   run: ls -a
+      # - name: Change To Libary
+      #   run: cd ng-safe-eval
       - run: pwd
-      - run: npm publish --access=public
+      - run: cd ./dist/ng-safe-eval && npm publish --access=public
         env:
           GIT_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -67,13 +69,13 @@ jobs:
         run: ng build --configuration=production 
       - name: List Directory
         run: ls -a
-      - name: Change Working directory
-        run: cd dist
-      - name: List Directory
-        run: ls -a
-      - name: Change To Libary
-        run: cd ng-safe-eval
+      # - name: Change Working directory
+      #   run: cd dist
+      # - name: List Directory
+      #   run: ls -a
+      # - name: Change To Libary
+      #   run: cd ng-safe-eval
       - run: echo pwd
-      - run: npm publish --access=public
+      - run: cd ./dist/ng-safe-eval && npm publish --access=public
         env: 
           NODE_AUTH_TOKEN: ${{secrets.TOKEN_NPM}}
