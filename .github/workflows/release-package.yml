@@ -4,15 +4,15 @@ on:
     types: [created, edited]
 
 jobs:
-  # build:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v4
-  #     - uses: actions/setup-node@v4
-  #       with:
-  #         node-version: 20
-  #     - run: npm install -g @angular/cli
-  #     - run: npm ci
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm install -g @angular/cli
+      - run: npm ci
 
   publish-gpr:
     runs-on: ubuntu-latest
@@ -27,6 +27,10 @@ jobs:
           node-version: 20
           registry-url: https://npm.pkg.github.com/
           token: ${{ secrets.TOKEN_NPM }}
+      - name: Set up npm registry
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.TOKEN_NPM }}" > ~/.npmrcvb
+      - name: User
+        run: npm whoami
       - name: Install Angular
         run: npm install -g @angular/cli@latest
       - name: Check Angular.
@@ -45,8 +49,7 @@ jobs:
       #   run: ls -a
       # - name: Change To Libary
       #   run: cd ng-safe-eval
-      - name: Set up npm registry
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.TOKEN_NPM }}" > ~/.npmrcvb
+     
       - name: View
         run: ls
       - name: Change Directory and Run
@@ -66,8 +69,12 @@ jobs:
       - uses: jgierer12/npm-auth-gpr@v1
         with: 
           node-version: 20
-          registry-url: https://registry.npmjs.org/
+          registry-url: htt://registry.npmjs.org/
           token: ${{ secrets.TOKEN_NPM }}
+      - name: Set up npm registry
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.TOKEN_NPM }}" > ~/.npmrcvb
+      - name: User
+        run: npm whoami
       - name: Install Angular
         run: npm install -g @angular/cli@latest
       - name: Check Angular.
@@ -84,8 +91,7 @@ jobs:
       #   run: ls -a
       # - name: Change To Libary
       #   run: cd ng-safe-eval
-      - name: Set up npm registry
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.TOKEN_NPM }}" > ~/.npmrcvb
+     
       - name: View
         run: ls
       - name: Change Directory and Run
