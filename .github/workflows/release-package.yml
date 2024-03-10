@@ -37,6 +37,8 @@ jobs:
         run: ls -a
       - name: Change Working directory
         run: cd dist
+      - name: List Directory
+        run: ls -a
       - name: Change To Libary
         run: cd ng-safe-eval
       - run: pwd
@@ -67,6 +69,8 @@ jobs:
         run: ls -a
       - name: Change Working directory
         run: cd dist
+      - name: List Directory
+        run: ls -a
       - name: Change To Libary
         run: cd ng-safe-eval
       - run: echo pwd
