@@ -1,5 +1,5 @@
 {
-  "name": "@flashjs/ng-safe-eval",
+  "name": "@avalanchejs/ng-safe-eval",
   "version": "0.0.2",
   "description": "This package is designed to provide a secure and controlled environment for executing JavaScript code dynamically within a specified context. Built as a wrapper around the built-in eval function, ngSafeEval ensures that only strings with a defined context are executed, enhancing the security and predictability of your application.",
   "author": {
@@ -44,7 +44,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/falshjs/ngx-safe-eval.git"
+    "url": "git+https://github.com/avalanche-softwares/ngx-safe-eval.git"
   },
   "keywords": [
     "dynamic function execution",
@@ -53,7 +53,7 @@
     "eval"
   ],
   "bugs": {
-    "url": "https://github.com/falshjs/ngx-safe-eval/issues"
+    "url": "https://github.com/avalanche-softwares/ngx-safe-eval/issues"
   },
-  "homepage": "https://github.com/falshjs/ngx-safe-eval/#readme"
+  "homepage": "https://github.com/avalanche-softwares/ngx-safe-eval/#readme"
 }

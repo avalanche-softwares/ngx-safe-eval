@@ -1,24 +1,37 @@
 # NgSafeEval
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+NgSafeEval is a angular package designed to provide a secure and controlled environment for executing JavaScript code dynamically within a specified context. Built as a wrapper around the built-in eval function, ngSafeEval ensures that only strings with a defined context are executed, enhancing the security and predictability of your application.
 
-## Code scaffolding
+## Key Features
 
-Run `ng generate component component-name --project ng-safe-eval` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ng-safe-eval`.
-> Note: Don't forget to add `--project ng-safe-eval` or else it will be added to the default project in your `angular.json` file. 
+- Context-Specific Execution: Executes JavaScript code strings only within a specified context, preventing unauthorized access to the global scope or other unintended side effects.
+- Flexible Context Definition: Allows you to define the context in which the code will be executed, ensuring that variables and functions within the code string are scoped correctly.
+- Enhanced Security: Reduces the risk of executing malicious code by confining the execution environment to a predefined context.
+- Easy Integration: Designed to integrate seamlessly into existing Node.js projects, with a simple API that makes it easy to use within your applications.
 
-## Build
+## Usage Example
 
-Run `ng build ng-safe-eval` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+import NgSafeEvalService form 'ng-safe-eval';
 
-## Publishing
+// Define the context in which the code will be executed 
+const context = { variable1: 'Hello', variable2: 'World' };
 
-After building your library with `ng build ng-safe-eval`, go to the dist folder `cd dist/ng-safe-eval` and run `npm publish`.
+// JavaScript code string to be executed 
+const codeString = 'variable1 + " " + variable2';
 
-## Running unit tests
+//   Execute the code string within the specified context 
+const result = NgSafeEvalService.execute(codeString, context);
+    console.log(result); // Outputs: Hello World
+```
 
-Run `ng test ng-safe-eval` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation Process
 
-## Further help
+To install NgSafeEval, simply run the following command in your project directory:
+`npm install NgSafeEval`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+While NgSafeEval provides a secure way to execute dynamic code, it's essential to use it judiciously. Always validate and sanitize input strings to prevent injection attacks and ensure that the context is defined as narrowly as possible to limit the scope of execution.
+
+NgSafeEval is a powerful tool for applications that require dynamic code execution, offering a balance between flexibility and security. With its focus on controlled execution within a specified context, it helps developers build more secure and robust applications.
+
+Repository: For more information, visit the official GitHub repository at github.com/yourusername/safe-eval-wrapper.
