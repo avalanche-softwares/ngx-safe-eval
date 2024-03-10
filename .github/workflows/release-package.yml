@@ -36,7 +36,9 @@ jobs:
       - name: List Directory
         run: ls -a
       - name: Change Working directory
-        run: cd dist/ng-safe-eval
+        run: cd dist
+      - name: Change To Libary
+        run: cd ng-safe-eval
       - run: pwd
       - run: npm publish --access=public
         env:
@@ -64,7 +66,9 @@ jobs:
       - name: List Directory
         run: ls -a
       - name: Change Working directory
-        run: cd dist/ng-safe-eval
+        run: cd dist
+      - name: Change To Libary
+        run: cd ng-safe-eval
       - run: echo pwd
       - run: npm publish --access=public
         env: 
