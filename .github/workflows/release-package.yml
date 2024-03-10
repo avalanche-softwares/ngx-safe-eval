@@ -43,8 +43,9 @@ jobs:
       #   run: ls -a
       # - name: Change To Libary
       #   run: cd ng-safe-eval
-      - run: pwd
-      - run: cd ./dist/ng-safe-eval && npm publish --access=public
+      - name: Change Directory and Run
+        working-directory: ./dist/ng-safe-eval
+        run: npm publish --access=public
         env:
           GIT_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
@@ -75,7 +76,8 @@ jobs:
       #   run: ls -a
       # - name: Change To Libary
       #   run: cd ng-safe-eval
-      - run: echo pwd
-      - run: cd ./dist/ng-safe-eval && npm publish --access=public
+      - name: Change Directory and Run
+        working-directory: ./dist/ng-safe-eval
+        run: npm publish --access=public
         env: 
           NODE_AUTH_TOKEN: ${{secrets.TOKEN_NPM}}
